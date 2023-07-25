@@ -5,10 +5,6 @@
 > so please refer to [it's documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 > for more usage information.
 
-# [_Put your project name here_]
-
-[_Add a brief description of your project here._]
-
 ## npm script commands
 
 `backpack-react-scripts` is listed as a `devDependency` in your [package.json](./package.json) and exposes the following npm scripts:
