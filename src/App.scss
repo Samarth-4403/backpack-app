@@ -1,45 +1,108 @@
-@import '~bpk-mixins';
-
-@mixin container {
-  max-width: $bpk-breakpoint-desktop;
-  margin: 0 auto;
-}
+$primaryColor: #0072ce;
+$secondaryColor: #f9a51a;
+$backgroundColor: #f7f9fa;
+$textColor: #333;
+$buttonColor: #4caf50;
+$borderColor: #eaeaea;
+$shadowColor: rgba(0, 0, 0, 0.1);
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $backgroundColor;
+  color: $textColor;
+}
 
-  &__header {
-    padding: $bpk-spacing-lg * 2;
-    background-color: $bpk-color-sky-blue;
-    background-image: $bpk-primary-gradient;
-    color: $bpk-color-white;
+.App__header {
+  margin-bottom: 30px;
+}
 
-    @include bpk-box-shadow-sm;
+.App__heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: $primaryColor;
+  text-transform: uppercase;
+}
 
-    @include bpk-breakpoint-mobile {
-      padding: $bpk-spacing-xl;
-    }
+.App__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App__calendar {
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px $shadowColor;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  width: 320px;
+
+  .BpkCalendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
   }
 
-  &__header-inner {
-    @include container;
+  .BpkCalendarGridHeader {
+    font-weight: bold;
+    text-align: center;
   }
 
-  &__main {
-    padding: $bpk-spacing-xxl;
-
-    @include container;
-
-    @include bpk-breakpoint-mobile {
-      padding: $bpk-spacing-base;
-    }
+  .BpkCalendarGridHeaderCell {
+    padding: 8px 0;
   }
 
-  &__heading {
-    margin-bottom: $bpk-spacing-sm;
+  .BpkCalendarGridDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    color: $primaryColor;
   }
 
-  &__text {
-    margin-bottom: $bpk-spacing-sm;
+  .BpkCalendarGridDate:hover {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    color: #fff;
+    cursor: pointer;
   }
+
+  .BpkCalendarGridDate--selected {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    color: #fff;
+  }
+}
+
+.BpkButton {
+  background-color: $buttonColor;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Added margin-top to move the button down */
+
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.BpkText {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px; /* Added margin-bottom to move the text down */
 }

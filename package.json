@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@skyscanner/backpack-react-scripts": "10.5.0"
+    "@skyscanner/backpack-react-scripts": "10.5.0",
+    "@skyscanner/bpk-foundations-react-native": "^4.1.0",
+    "backpack-react-native": "^23.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,8 +29,9 @@
   },
   "devDependencies": {
     "@skyscanner/backpack-web": "^15.1.0",
+    "bpk-component-calendar": "^2.0.11",
     "bpk-mixins": "^36.2.0",
-    "bpk-stylesheets": "^7.2.16",
+    "bpk-stylesheets": "^3.2.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
